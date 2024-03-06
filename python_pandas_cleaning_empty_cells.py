@@ -24,9 +24,12 @@ and removing a few rows will not have a big impact on the result.
     
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 new_df = df.dropna()
 print(new_df.to_string())
+
+print("TABLE 1")
+
 
 
 # By default, the dropna() method returns a new DataFrame, 
@@ -41,9 +44,12 @@ print("----------------------------------------")
 
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 df.dropna(inplace = True)
 print(df.to_string()) 
+
+print("TABLE 2")
+
 
    
 
@@ -69,11 +75,10 @@ The fillna() method allows us to replace empty cells with a value:
 # Replace NULL values with the number 130:
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 df.fillna(130, inplace = True) 
-
-
-
+print(df.to_string())
+print("TABLE 3")
 
 
 """
@@ -89,12 +94,11 @@ specify the column name for the DataFrame:
 # Replace NULL values in the "Calories" columns with the number 130:
 
 import pandas as pd
-df = pd.read_csv('data.csv')
-df["Calories"].fillna(130, inplace = True)    
+df = pd.read_csv('datad.csv')
+df["Calories"].fillna(130, inplace = True)
+print(df.to_string())
 
-
-
-
+print("TABLE 4")
 print("-----------------------------------------")
 """
 
@@ -110,21 +114,26 @@ the respective values for a specified column:
 # Calculate the MEAN, and replace any empty values with it:
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 x = df["Calories"].mean()
 df["Calories"].fillna(x, inplace = True)
+print(df.to_string())
 
-
+print("TABLE 5")
+print("----------------------------------")
 
 
 # Mean = the average value (the sum of all values divided by number of values).
-
 # Calculate the MEDIAN, and replace any empty values with it:
     
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 x = df["Calories"].median()
 df["Calories"].fillna(x, inplace = True)
+print(df.to_string())
+
+print("TABLE 6")
+print("-----------------------------------")
 
 
 # Median = the value in the middle, after you have sorted all values ascending.    
@@ -132,9 +141,15 @@ df["Calories"].fillna(x, inplace = True)
 
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_csv('datad.csv')
 x = df["Calories"].mode()[0]
 df["Calories"].fillna(x, inplace = True)
+print(df.to_string())
+
+print(" TABLE 7")
+print("------------------------------------")
+
+
 
 
 
