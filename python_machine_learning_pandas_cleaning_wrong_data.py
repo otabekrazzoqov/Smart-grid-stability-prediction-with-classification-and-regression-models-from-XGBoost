@@ -58,4 +58,5 @@ and replace any values that are outside of the boundaries.
 for x in df.index:
   if df.loc[x, "Duration"] > 120:
     df.loc[x, "Duration"] = 120
+print(df.to_string())
 
